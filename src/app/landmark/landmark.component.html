@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>GuideMe - AI Landmark Guide</h1>
+  
+    <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+    <button (click)="uploadImage()">Identify Landmark</button>
+  
+    <div *ngIf="loading">Analyzing...</div>
+  
+    <div *ngIf="landmark">
+      <h3>{{ landmark }}</h3>
+    </div>
+    <div class="image-preview" *ngIf="imagePreview" style="margin-top: 1rem;">
+        <img [src]="imagePreview" alt="Selected image" style="max-width: 100%; height: auto;" />
+    </div>
+    <div *ngIf="landmark">
+      <p>{{ description }}</p>
+    </div>
+  
+    <div *ngIf="error" class="error">
+      {{ error }}
+    </div>
+</div>
+  
