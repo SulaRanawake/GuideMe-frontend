@@ -47,7 +47,7 @@ export class LandmarkComponent {
     const formData = new FormData();
     formData.append('image', this.selectedFile);
 
-    this.http.post<any>('http://localhost:5050/api/analyze', formData)
+    this.http.post<any>('https://guideme-backend-riuz.onrender.com/api/analyze', formData)
       .subscribe({
         next: (response) => {
           this.loading = false;
